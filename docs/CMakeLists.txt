@@ -1,7 +1,7 @@
-find_program(DOXYGEN_PATH doxygen REQUIRED)
+find_program(DOXYGEN_PATH doxygen)
 
-if(DOXYGEN_PATH_NOTFOUND)
-    message(FATAL_ERROR "Doxygen is needed to build the documentation. Please install it on your system")
+if(NOT DOXYGEN_PATH)
+    message(STATUS "Doxygen not found - documentation target will not be available")
 else()
     message(STATUS "Doxygen found.")
 
